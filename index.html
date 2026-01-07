@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biohack Peptídios | Elite Performance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clinical: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            400: '#94A3B8',
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#020617',
+                        },
+                        pure: {
+                            500: '#14B8A6',
+                            600: '#0D9488',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .surgical-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(20, 184, 166, 0.15) 0%, rgba(2, 6, 23, 1) 70%);
+        }
+
+        .metal-border {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+        }
+
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-clinical-950 text-slate-300 font-sans selection:bg-pure-500 selection:text-white pt-8">
+
+    <!-- MANDATORY DISCLAIMER BANNER -->
+    <div
+        class="fixed top-0 w-full z-[200] bg-red-900/90 text-white text-[10px] md:text-xs font-mono text-center py-1.5 backdrop-blur-sm border-b border-red-500/30 uppercase tracking-widest">
+        ⚠️ MEDICAMENTO A FIM DE TESTE, PROCURE ORIENTAÇÃO DO SEU MÉDICO
+    </div>
+
+    <!-- VERSION 1: THE CLINICAL COMMANDER (Top Navigation & Authority) -->
+    <nav class="fixed w-full z-[100] top-7 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-sm bg-pure-500 flex items-center justify-center text-clinical-950 font-bold text-xl shadow-[0_0_15px_rgba(20,184,166,0.5)]">
+                    B</div>
+                <div class="leading-none">
+                    <span class="block font-display font-bold text-white text-xl tracking-tighter">BIOHACK<span
+                            class="text-pure-500">LABS</span></span>
+                    <span class="text-[10px] font-mono text-pure-500/80 tracking-widest uppercase">Pharmaceutical
+                        Grade</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-8 items-center">
+                <div class="flex flex-col items-end mr-4">
+                    <span class="text-[10px] font-mono text-emerald-500 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> SYSTEM STATUS:
+                        ONLINE
+                    </span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase tracking-tighter">Estoque Brasil: 94%
+                        Disponível</span>
+                </div>
+                <a href="#catalogo"
+                    class="bg-pure-500 hover:bg-pure-600 text-clinical-950 px-6 py-2.5 rounded-sm font-bold text-sm transition-all glow-button active:scale-95">
+                    ACESSAR CATÁLOGO
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- VERSION 2: THE MONOLITH HERO (Visual Dominance & "No-Brainer" Hook) -->
+    <section class="relative pt-32 pb-20 surgical-gradient overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-pure-500/10 blur-[120px] rounded-full">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pure-500/10 border border-pure-500/20 text-pure-500 text-xs font-mono font-bold uppercase tracking-widest">
+                        🛡️ Importado da Irlanda | Pureza 99.65%
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-display font-bold text-white leading-[0.9] tracking-tighter">
+                        PERFORMANCE <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-pure-500 to-emerald-400">SEM
+                            DESCULPAS.</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-xl leading-relaxed">
+                        Peptídeos de pureza absoluta para quem não aceita o médio. Testados em laboratório, importados
+                        legalmente, entrega via SEDEX em 48h.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#catalogo"
+                            class="bg-white text-clinical-950 px-10 py-5 rounded-sm font-black text-lg hover:bg-pure-500 transition-colors flex items-center gap-3 group">
+                            COMPRAR AGORA
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                        <div class="flex -space-x-3 items-center ml-4">
+                            <img src="https://i.pravatar.cc/100?u=1"
+                                class="w-12 h-12 rounded-full border-2 border-clinical-950 object-cover" alt="User">
+                            <img src="https://i.pravatar.cc/100?u=2"
+                                class="w-12 h-12 rounded-full border-2 border-clinical-950 object-cover" alt="User">
+                            <img src="https://i.pravatar.cc/100?u=3"
+                                class="w-12 h-12 rounded-full border-2 border-clinical-950 object-cover" alt="User">
+                            <div class="pl-6">
+                                <span class="block text-white font-bold">+1.400 Clientes</span>
+                                <span class="text-xs text-pure-500 font-mono italic">"Resultados em 14 dias"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative lg:block hidden">
+                    <div class="absolute inset-0 bg-pure-500/20 blur-[100px] animate-pulse-slow"></div>
+                    <div class="relative animate-float">
+                        <div class="metal-border p-4 rounded-2xl bg-clinical-900/50 backdrop-blur-xl">
+                            <div
+                                class="bg-clinical-950 rounded-xl overflow-hidden aspect-square flex items-center justify-center">
+                                <span class="text-9xl">🧪</span>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center px-2">
+                                <div>
+                                    <span class="block text-xs font-mono text-pure-500">LAB BATCH: #IE-2024-X</span>
+                                    <span class="text-xl font-bold text-white tracking-tight">Vial 99.65%
+                                        Certified</span>
+                                </div>
+                                <div class="text-right font-mono">
+                                    <span class="block text-[10px] text-slate-500 uppercase">Status</span>
+                                    <span class="text-emerald-500 font-bold">DISPONÍVEL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VERSION 3: THE HIGH-CONVERSION GRID (Social Proof & Urgency) -->
+    <section id="catalogo" class="py-24 bg-white text-clinical-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-display font-black tracking-tighter uppercase italic">
+                        Arsenal <span class="text-pure-600 underline">Biohacking</span>
+                    </h2>
+                    <p class="text-clinical-400 mt-2 font-mono">Selecionado para performance de elite.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-clinical-100 p-4 rounded-lg flex items-center gap-3">
+                        <div class="text-2xl">🚚</div>
+                        <div class="leading-none">
+                            <span class="block font-bold text-sm">FRETE EXPRESSO</span>
+                            <span class="text-[10px] text-clinical-400">SUL/SUDESTE 24H</span>
+                        </div>
+                    </div>
+                    <div class="bg-clinical-100 p-4 rounded-lg flex items-center gap-3">
+                        <div class="text-2xl">💳</div>
+                        <div class="leading-none">
+                            <span class="block font-bold text-sm">PIX 10% OFF</span>
+                            <span class="text-[10px] text-clinical-400">APROVAÇÃO INSTANTÂNEA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+                <!-- PRODUCT 1 -->
+                <div
+                    class="group relative bg-clinical-50 rounded-3xl p-8 border border-clinical-200 hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4">
+                        <span
+                            class="bg-pure-600 text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-widest uppercase">Best
+                            Seller</span>
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl flex items-center justify-center mb-8 shadow-inner relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://placehold.co/400x400/fff/0D9488?text=SEMA-2MG"
+                            class="w-48 h-48 object-contain mix-blend-multiply" alt="Semaglutida">
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight">Semaglutida IR (2mg)</h3>
+                    <p class="text-clinical-400 text-sm mt-2 leading-relaxed">Padrão Ouro para controle metabólico e
+                        queima de gordura acelerada. Importado Biotech Ireland.</p>
+
+                    <ul class="mt-6 space-y-2">
+                        <li class="flex items-center gap-2 text-sm font-semibold">
+                            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z">
+                                </path>
+                            </svg>
+                            Pureza Certificada 99.8%
+                        </li>
+                        <li class="flex items-center gap-2 text-sm font-semibold">
+                            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z">
+                                </path>
+                            </svg>
+                            + Kit Água Bacteriostática (2ml)
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 flex items-center justify-between border-t border-clinical-200 pt-6">
+                        <div>
+                            <span class="block text-xs text-clinical-400 line-through">R$ 499,00</span>
+                            <span class="text-3xl font-black text-clinical-900">R$ 347,00</span>
+                        </div>
+                        <a href="#"
+                            class="bg-clinical-950 text-white px-6 py-4 rounded-xl font-bold hover:bg-pure-600 transition-colors shadow-xl">COMPRAR</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 2 -->
+                <div
+                    class="group relative bg-clinical-50 rounded-3xl p-8 border border-clinical-200 hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4">
+                        <span
+                            class="bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-widest uppercase">Combo
+                            Elite</span>
+                    </div>
+                    <div
+                        class="aspect-square bg-white rounded-2xl flex items-center justify-center mb-8 shadow-inner relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://placehold.co/400x400/fff/6b21a8?text=RECOVER+5MG"
+                            class="w-48 h-48 object-contain mix-blend-multiply" alt="BPC-157">
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight">BPC-157 + TB-500 (5mg)</h3>
+                    <p class="text-clinical-400 text-sm mt-2 leading-relaxed">O protocolo definitivo de regeneração
+                        tecidual, articular e muscular para atletas.</p>
+
+                    <ul class="mt-6 space-y-2">
+                        <li class="flex items-center gap-2 text-sm font-semibold">
+                            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z">
+                                </path>
+                            </svg>
+                            Recuperação Acelerada
+                        </li>
+                        <li class="flex items-center gap-2 text-sm font-semibold">
+                            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z">
+                                </path>
+                            </svg>
+                            Alívio de Dores Crônicas
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 flex items-center justify-between border-t border-clinical-200 pt-6">
+                        <div>
+                            <span class="block text-xs text-clinical-400 line-through">R$ 580,00</span>
+                            <span class="text-3xl font-black text-clinical-900">R$ 412,00</span>
+                        </div>
+                        <a href="#"
+                            class="bg-clinical-950 text-white px-6 py-4 rounded-xl font-bold hover:bg-pure-600 transition-colors shadow-xl">COMPRAR</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 3 -->
+                <div
+                    class="group relative bg-clinical-50 rounded-3xl p-8 border border-clinical-200 hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden">
+                    <div
+                        class="aspect-square bg-white rounded-2xl flex items-center justify-center mb-8 shadow-inner relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://placehold.co/400x400/fff/111827?text=MT2-10MG"
+                            class="w-48 h-48 object-contain mix-blend-multiply" alt="Melanotan">
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight">Melanotan II (10mg)</h3>
+                    <p class="text-clinical-400 text-sm mt-2 leading-relaxed">Bronzeamento profundo e duradouro com
+                        efeito imediato na libido e vigor.</p>
+
+                    <ul class="mt-6 space-y-2">
+                        <li class="flex items-center gap-2 text-sm font-semibold">
+                            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z">
+                                </path>
+                            </svg>
+                            Estética & Performance
+                        </li>
+                        <li class="flex items-center gap-2 text-sm font-semibold">
+                            <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 10.586l3.293-3.293a1 1 0 111.414 1.414z">
+                                </path>
+                            </svg>
+                            Pureza Premium HPLC
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 flex items-center justify-between border-t border-clinical-200 pt-6">
+                        <div>
+                            <span class="block text-xs text-clinical-400">À Vista</span>
+                            <span class="text-3xl font-black text-clinical-900">R$ 289,00</span>
+                        </div>
+                        <a href="#"
+                            class="bg-clinical-950 text-white px-6 py-4 rounded-xl font-bold hover:bg-pure-600 transition-colors shadow-xl">COMPRAR</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL DEEP DIVE (New Section for "Info Landing Page") -->
+    <section class="py-20 bg-clinical-50 border-y border-clinical-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <span class="text-pure-600 font-mono text-xs font-bold tracking-widest uppercase mb-2 block">Base de
+                    Conhecimento Científico</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-clinical-950">Especificações Farmacológicas
+                </h2>
+            </div>
+
+            <div class="space-y-12">
+
+                <!-- TECH BLOCK 1: SEMAGLUTIDA -->
+                <div
+                    class="bg-white rounded-2xl p-8 border border-clinical-200 shadow-sm flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3 border-r border-clinical-100 pr-8">
+                        <h3 class="text-2xl font-bold text-clinical-900 mb-2">Semaglutida (GLP-1)</h3>
+                        <p class="text-xs font-mono text-pure-600 mb-6">CAS No: 910463-68-2 | Pureza: >99%</p>
+                        <div class="space-y-4">
+                            <div class="bg-clinical-50 p-4 rounded-lg">
+                                <span class="block text-[10px] text-slate-500 uppercase tracking-widest mb-1">Mecanismo
+                                    de Ação</span>
+                                <p class="text-sm text-clinical-800 leading-snug">Agonista do receptor GLP-1 que
+                                    mimetiza a incretina endógena, regulando a secreção de insulina, suprimindo o
+                                    glucagon e retardando o esvaziamento gástrico.</p>
+                            </div>
+                            <div class="bg-clinical-50 p-4 rounded-lg">
+                                <span
+                                    class="block text-[10px] text-slate-500 uppercase tracking-widest mb-1">Meia-vida</span>
+                                <p class="text-sm text-clinical-800 font-bold">~7 dias (Aplicação Semanal)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h4 class="font-bold text-clinical-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-pure-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Benefícios Observados em Pesquisa
+                        </h4>
+                        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">• <span>Redução visceral de tecido adiposo
+                                        significativa.</span></li>
+                                <li class="flex items-start gap-2">• <span>Melhora marcante na sensibilidade à
+                                        insulina.</span></li>
+                                <li class="flex items-start gap-2">• <span>Neuroproteção e redução de inflamação
+                                        sistêmica.</span></li>
+                            </ul>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">• <span>Controle do apetite via eixo
+                                        hipotálamo.</span></li>
+                                <li class="flex items-start gap-2">• <span>Redução de risco cardiovascular.</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-clinical-100 pt-6">
+                            <h4 class="font-bold text-clinical-900 mb-2 text-sm">Protocolo de Armazenamento</h4>
+                            <p class="text-sm text-slate-600">Liofilizado (Pó): Estável em temperatura ambiente por 90
+                                dias. Refrigerado (2-8°C) por 2 anos.<br>Reconstituído: Manter obrigatoriamente
+                                refrigerado (2-8°C) e usar em até 30 dias.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TECH BLOCK 2: BPC-157 -->
+                <div
+                    class="bg-white rounded-2xl p-8 border border-clinical-200 shadow-sm flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3 border-r border-clinical-100 pr-8">
+                        <h3 class="text-2xl font-bold text-clinical-900 mb-2">BPC-157 + TB-500</h3>
+                        <p class="text-xs font-mono text-purple-600 mb-6">Wolverine Protocol | Mix 5mg/5mg</p>
+                        <div class="space-y-4">
+                            <div class="bg-clinical-50 p-4 rounded-lg">
+                                <span
+                                    class="block text-[10px] text-slate-500 uppercase tracking-widest mb-1">Sinergia</span>
+                                <p class="text-sm text-clinical-800 leading-snug">BPC-157 (Body Protection Compound)
+                                    atua na sinalização de cura sistêmica. TB-500 (Thymosin Beta-4) regula a actina
+                                    celular para mobilidade e reparo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h4 class="font-bold text-clinical-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Potencial Regenerativo
+                        </h4>
+                        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">• <span>Aceleração da cura de tendões e
+                                        ligamentos.</span></li>
+                                <li class="flex items-start gap-2">• <span>Angiogênese (formação de novos vasos
+                                        sanguíneos).</span></li>
+                                <li class="flex items-start gap-2">• <span>Proteção gástrica contra úlceras e
+                                        inflamação.</span></li>
+                            </ul>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">• <span>Redução de tecido cicatricial
+                                        (fibrose).</span></li>
+                                <li class="flex items-start gap-2">• <span>Melhora na flexibilidade muscular.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="border-t border-clinical-100 pt-6">
+                            <h4 class="font-bold text-clinical-900 mb-2 text-sm">Protocolo de Armazenamento</h4>
+                            <p class="text-sm text-slate-600">Sensível à luz UV e agitação mecânica severa. Manter
+                                refrigerado após reconstituição. Evitar congelamento após diluição.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TECH BLOCK 3: MELANOTAN 2 -->
+                <div
+                    class="bg-white rounded-2xl p-8 border border-clinical-200 shadow-sm flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3 border-r border-clinical-100 pr-8">
+                        <h3 class="text-2xl font-bold text-clinical-900 mb-2">Melanotan II</h3>
+                        <p class="text-xs font-mono text-slate-800 mb-6">Alpha-MSH Analog</p>
+                        <div class="space-y-4">
+                            <div class="bg-clinical-50 p-4 rounded-lg">
+                                <span
+                                    class="block text-[10px] text-slate-500 uppercase tracking-widest mb-1">Foco</span>
+                                <p class="text-sm text-clinical-800 leading-snug">Estimulação de melanócitos para
+                                    produção de eumelanina (pigmento escuro) e ativação de receptores MC3/MC4 no sistema
+                                    nervoso central.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h4 class="font-bold text-clinical-900 mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                            Efeitos Sistêmicos
+                        </h4>
+                        <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">• <span>Bronzeamento acelerado com mínima exposição
+                                        UV.</span></li>
+                                <li class="flex items-start gap-2">• <span>Fotoproteção da pele contra
+                                        queimaduras.</span></li>
+                            </ul>
+                            <ul class="space-y-2 text-sm text-slate-700">
+                                <li class="flex items-start gap-2">• <span>Aumento significativo da libido e função
+                                        erétil.</span></li>
+                                <li class="flex items-start gap-2">• <span>Supressão leve de apetite.</span></li>
+                            </ul>
+                        </div>
+                        <div class="border-t border-clinical-100 pt-6">
+                            <h4 class="font-bold text-clinical-900 mb-2 text-sm">Advertência Específica</h4>
+                            <p class="text-sm text-slate-600">Pode causar náuseas transitórias na aplicação inicial.
+                                Recomenda-se titulação gradual da dose.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF ENGINE (Live Proof & Testimonials) -->
+    <section class="py-20 bg-clinical-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 items-center">
+            <div class="lg:col-span-1">
+                <h3 class="text-white text-3xl font-display font-bold leading-tight mb-4">Aprovado pela Comunidade de
+                    Elite.</h3>
+                <p class="text-slate-500 mb-8">Não vendemos apenas peptídeos. Vendemos a confiança de estar usando o
+                    melhor produto do mercado mundial.</p>
+                <div class="flex items-center gap-4 text-pure-500 font-mono text-sm">
+                    <span class="flex h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                    87 PESSOAS COMPRANDO AGORA
+                </div>
+            </div>
+            <div class="lg:col-span-2 flex gap-6 no-scrollbar overflow-x-auto pb-8">
+                <!-- TESTIMONIAL 1 -->
+                <div class="min-w-[320px] glass-panel p-6 rounded-2xl metal-border">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-sm italic text-slate-300">"Sempre tive medo de comprar peptídeos online e vir
+                        subdosado. O da Biohack é nítido a qualidade. O MT2 bateu forte em 3 dias."</p>
+                    <div class="mt-4 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-700"></div>
+                        <span class="text-xs font-bold text-white uppercase tracking-widest">Ricardo S. <span
+                                class="text-slate-500 text-[10px] ml-2 font-normal">Rio de Janeiro/RJ</span></span>
+                    </div>
+                </div>
+                <!-- TESTIMONIAL 2 -->
+                <div class="min-w-[320px] glass-panel p-6 rounded-2xl metal-border">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-sm italic text-slate-300">"Atendimento no WhatsApp é 10/10. Chegou no dia seguinte
+                        aqui em SP. O kit com água facilita muito a vida."</p>
+                    <div class="mt-4 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-700"></div>
+                        <span class="text-xs font-bold text-white uppercase tracking-widest">Dra. Amanda L. <span
+                                class="text-slate-500 text-[10px] ml-2 font-normal">São Paulo/SP</span></span>
+                    </div>
+                </div>
+                <!-- TESTIMONIAL 3 -->
+                <div class="min-w-[320px] glass-panel p-6 rounded-2xl metal-border">
+                    <div class="flex text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-sm italic text-slate-300">"Uso o combo de recuperação para treinar Jiu Jitsu. Minha
+                        lesão no ombro que durava meses sumiu em 3 semanas."</p>
+                    <div class="mt-4 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-700"></div>
+                        <span class="text-xs font-bold text-white uppercase tracking-widest">Marcos V. <span
+                                class="text-slate-500 text-[10px] ml-2 font-normal">Curitiba/PR</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER: THE CORPORATE SEAL -->
+    <footer class="py-16 bg-clinical-950 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center">
+            <div class="w-16 h-[2px] bg-pure-500 mb-12"></div>
+            <span class="font-display font-bold text-white text-3xl tracking-tighter mb-4">BIOHACK<span
+                    class="text-pure-500">LABS</span></span>
+            <p class="text-slate-500 text-xs max-w-lg leading-relaxed uppercase tracking-widest font-mono">
+                Produtos destinados exclusivamente para pesquisa laboratorial. Importação via Biotech Pharmaceuticals
+                Ireland.
+                Sua performance é nossa métrica de sucesso.
+            </p>
+            <div class="mt-12 text-[10px] text-slate-700 font-mono tracking-widest">
+                &copy; 2024 BIOHACK LABS PERFORMANCE. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#"
+        class="fixed bottom-24 lg:bottom-8 right-6 z-[190] bg-white text-clinical-950 p-3 rounded-full shadow-lg border border-clinical-200 hover:bg-clinical-50 transition-all hover:-translate-y-1 group"
+        aria-label="Voltar ao topo">
+        <svg class="w-6 h-6 text-pure-500 group-hover:text-pure-600" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </a>
+
+    <!-- STICKY MOBILE CONVERTER -->
+    <div class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] z-[200]">
+        <a href="#catalogo"
+            class="bg-pure-500 text-clinical-950 w-full flex items-center justify-center h-16 rounded-2xl font-black text-lg shadow-[0_20px_40px_rgba(20,184,166,0.4)] animate-bounce">
+            QUERO MEUS PEPTÍDIOS 🧪
+        </a>
+    </div>
+
+</body>
+
+</html>
